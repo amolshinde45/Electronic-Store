@@ -1,8 +1,10 @@
 package com.lcwd.electronic.store.services;
 
+import com.lcwd.electronic.store.dtos.PegeableResponse;
 import com.lcwd.electronic.store.dtos.UserDto;
 import com.lcwd.electronic.store.entities.User;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface UserService {
@@ -20,11 +22,11 @@ public interface UserService {
 
 
     //delete User
-    void deleteUser(String userId);
+    void deleteUser(String userId) throws IOException;
 
         //Get All Userss
 
-    List<UserDto> getAllUser();
+    PegeableResponse<UserDto> getAllUser(int pageNumber, int pageSize, String sortBy, String sortDir);
 
 
     //Get single user by id
